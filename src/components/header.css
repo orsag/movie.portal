@@ -1,0 +1,48 @@
+header {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 1.6rem;
+	font-family: 'Pacifico';
+	text-align: center;
+	padding: 10px 20px;
+	color: #424242;
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	top: 0;
+	background: #fff;
+	z-index: 2;
+	opacity: 0.8;
+}
+
+header .logo a {
+	color: #424242;
+}
+
+.header-box {
+	width: 100%;
+	height: 65px;
+	z-index: 1;
+}
+
+ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+header .menu {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header .menu li {
+	list-style: none;
+	padding: 0 25px;
+}
