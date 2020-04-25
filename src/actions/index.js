@@ -1,4 +1,4 @@
-import { MOVIES, PAGE, RESET } from '../constants';
+import { MOVIES, PAGE } from '../constants';
 
 const loadMovies = (searchText) => ({
 	type: MOVIES.LOAD,
@@ -54,10 +54,6 @@ const resetPaging = () => ({
 	type: PAGE.RESET_PAGING,
 })
 
-const resetApplicationState = () => ({
-	type: RESET,
-})
-
 export {
 	loadMovies,
 	setMovieList,
@@ -70,5 +66,4 @@ export {
 	removeDetail,
 	moveToExactPage,
 	resetPaging,
-	resetApplicationState,
 }

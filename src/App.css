@@ -1,5 +1,4 @@
 .app-container {
-	/*height: calc(100vh - 65px);*/
-	/*box-sizing: border-box;*/
-	/*padding-top: 65px;*/
+	overflow-y: hidden;
+	overflow-x: scroll;
 }

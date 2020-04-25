@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import {loadMovies, resetPaging, resetApplicationState} from '../actions'
+import {loadMovies, resetPaging} from '../actions'
 import {Box} from "@material-ui/core"
 import CustomGrid from './custom-grid'
 import Search from './search'
@@ -20,18 +20,12 @@ interface Props {
 }
 
 class MoviesGrid extends Component<Props> {
-	componentDidMount(): void {
-		if (this.props.location && this.props.location.pathname === '/') {
-			this.props.resetApplicationState()
-		}
-	}
-
 	onSearchClick = (searchText: string) => {
 		this.props.resetPaging()
 		this.props.loadMovies(searchText)
 	}
 
-	onKeyPress = (event: any, searchText: string) => {
+	onKeyPress = (event: React.KeyboardEvent, searchText: string) => {
 		if (event.charCode === 13) {
 			this.props.resetPaging()
 			this.props.loadMovies(searchText)
@@ -74,7 +68,6 @@ const mapStateToProps = ({ movies, error }) => ({
 const mapDispatchToProps = (dispatch: any) => ({
 	loadMovies: (searchText: string) => dispatch(loadMovies(searchText)),
 	resetPaging: () => dispatch(resetPaging()),
-	resetApplicationState: () => dispatch(resetApplicationState()),
 })
 
 // @ts-ignore

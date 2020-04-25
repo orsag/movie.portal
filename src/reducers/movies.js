@@ -1,4 +1,4 @@
-import { MOVIES, RESET } from '../constants'
+import { MOVIES } from '../constants'
 
 const initialState = {
 	movies: [],
@@ -28,10 +28,6 @@ const moviesReducer = (state = initialState, action) => {
 			return {
 				...state,
 				movies: [],
-			}
-		case RESET:
-			return {
-				...initialState,
 			}
 		default:
 			return state

@@ -61,43 +61,45 @@ class Detail extends Component<Props, State> {
 		if (!detail) return null
 		return (
       <div className="detail-root">
-        <div>
-					<img src={detail.Poster} alt="" />
-				</div>
-				<div className="detail-text">
-					<div className="detail-header">
-						{detail.Title}
-						<div className="detail-star" onClick={this.addToFavorites}>
-							<Tooltip title="Add to favorites" placement="bottom">
-								<IconButton  aria-label="delete">
-									<StarsIcon className="detail-star2" />
-								</IconButton>
-							</Tooltip>
+				<div className="detail-paper">
+					<div>
+						<img src={detail.Poster} alt="" />
+					</div>
+					<div className="detail-text">
+						<div className="detail-header">
+							{detail.Title}
+							<div className="detail-star" onClick={this.addToFavorites}>
+								<Tooltip title="Add to favorites" placement="bottom">
+									<IconButton  aria-label="delete">
+										<StarsIcon className="detail-star2" />
+									</IconButton>
+								</Tooltip>
+							</div>
+						</div>
+						<Box m={2} className="detail-text-box">
+							{detail.Writer}
+						</Box>
+						<Divider variant="middle" />
+						<Box m={2} className="detail-text-box">
+							{detail.Plot}
+						</Box>
+						<div>
+							<MyChip label={`Year: ${detail.Year}`} />
+							<MyChip label={`Rated: ${detail.Rated}`} />
+							<MyChip label={`Released: ${detail.Released}`} />
+							<MyChip label={`Runtime: ${detail.Runtime}`} />
+							<MyChip label={`Genre: ${detail.Genre}`} />
+							<MyChip label={`Director: ${detail.Director}`} />
+							<MyChip label={`BoxOffice: ${detail.BoxOffice}`} />
+							<MyChip label={`Production: ${detail.Production}`} />
 						</div>
 					</div>
-					<Box m={2} className="detail-text-box">
-						{detail.Writer}
-					</Box>
-					<Divider variant="middle" />
-					<Box m={2} className="detail-text-box">
-						{detail.Plot}
-					</Box>
-					<div>
-						<MyChip label={`Year: ${detail.Year}`} />
-						<MyChip label={`Rated: ${detail.Rated}`} />
-						<MyChip label={`Released: ${detail.Released}`} />
-						<MyChip label={`Runtime: ${detail.Runtime}`} />
-						<MyChip label={`Genre: ${detail.Genre}`} />
-						<MyChip label={`Director: ${detail.Director}`} />
-						<MyChip label={`BoxOffice: ${detail.BoxOffice}`} />
-						<MyChip label={`Production: ${detail.Production}`} />
-					</div>
+					<Snackbar open={this.state.openSnackbar} autoHideDuration={3000} onClose={this.handleClose}>
+						<Alert onClose={this.handleClose} severity="success">
+							Added to favorites!
+						</Alert>
+					</Snackbar>
 				</div>
-				<Snackbar open={this.state.openSnackbar} autoHideDuration={3000} onClose={this.handleClose}>
-					<Alert onClose={this.handleClose} severity="success">
-						Added to favorites!
-					</Alert>
-				</Snackbar>
       </div>
     )
   }

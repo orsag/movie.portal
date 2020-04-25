@@ -18,11 +18,13 @@ class App extends Component {
 				<Switch>
 					<Provider store={store}>
 						<Header />
-						<Container className="app-container" maxWidth={"md"}>
-							<Route path="/" exact component={MoviesGrid} />
-							<Route path="/search" component={MoviesGrid} />
-							<Route path="/favorites" component={Favorites} />
-							<Route path="/detail/:id" component={Detail} />
+						<Container className="app-container">
+							<Container maxWidth={"md"}>
+								<Route path="/" exact component={MoviesGrid} />
+								<Route path="/search" component={MoviesGrid} />
+								<Route path="/favorites" component={Favorites} />
+								<Route path="/detail/:id" component={Detail} />
+							</Container>
 						</Container>
 					</Provider>
 				</Switch>

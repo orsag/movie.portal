@@ -4,6 +4,8 @@ import { Movie } from "../types"
 import CustomGrid from './custom-grid'
 import {withRouter} from "react-router-dom";
 import {addToFavorites, removeFromFavorites} from "../actions";
+import {Box} from "@material-ui/core";
+import './favorites.css'
 
 interface Props {
 	history: any,
@@ -21,11 +23,14 @@ class Favorites extends Component<Props> {
 	}
 
   render = () => (
-  	<CustomGrid
-			movies={this.props.favorites}
-			onClick={this.onMovieClick}
-			removeFromFavorites={this.onRemoveFromFavorites}
-		/>)
+  	<Box className="favorite-grid-root">
+			<CustomGrid
+				movies={this.props.favorites}
+				onClick={this.onMovieClick}
+				removeFromFavorites={this.onRemoveFromFavorites}
+			/>
+		</Box>
+  	)
 }
 
 // @ts-ignore

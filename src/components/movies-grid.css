@@ -2,6 +2,7 @@
 	min-height: 100vh;
 	overflow: hidden;
 	background: #f2f2f2;
+	padding-top: 65px;
 }
 
 .movie-grid-search {
@@ -13,14 +14,4 @@
 
 .movie-grid-list {
 	flex-grow: 1;
-}
-
-.movie-grid-empty {
-	text-align: center;
-	color: #3f51b5;
-}
-
-.movie-grid-error {
-	text-align: center;
-	color: #cb0000;
 }

@@ -1,12 +1,9 @@
-.custom-grid {
-	display: flex;
-	flex-wrap: wrap;
-	box-sizing: border-box;
+.custom-grid-empty {
+	text-align: center;
+	color: #3f51b5;
 }
 
-.custom-grid-xs-6 {
-	flex-grow: 0;
-	max-width: 50%;
-	flex-basis: 50%;
-	padding: 12px;
+.custom-grid-error {
+	text-align: center;
+	color: #cb0000;
 }

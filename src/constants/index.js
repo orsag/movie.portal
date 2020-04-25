@@ -17,6 +17,4 @@ const PAGE = {
 	EXACT_PAGE: 'EXACT_PAGE',
 }
 
-const RESET = 'RESET_APPLICATION_STATE'
-
-export { MOVIES, PAGE, RESET }
+export { MOVIES, PAGE }

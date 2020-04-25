@@ -1,4 +1,4 @@
-import { MOVIES, RESET } from '../constants'
+import { MOVIES } from '../constants'
 
 const loadingReducer = (state = false, action) => {
 	switch (action.type) {
@@ -10,7 +10,6 @@ const loadingReducer = (state = false, action) => {
 			return false
 		case MOVIES.LOAD_FAIL:
 		case MOVIES.LOAD_DETAIL_FAIL:
-		case RESET:
 			return false
 		default:
 			return state

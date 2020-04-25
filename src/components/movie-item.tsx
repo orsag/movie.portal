@@ -21,7 +21,7 @@ class MovieItem extends Component<Props> {
 		this.props.onClick(this.props.movie.id)
 	}
 
-	removeFromFavorites = (event: any) => {
+	removeFromFavorites = (event: React.MouseEvent) => {
 		event.stopPropagation()
 		this.props.removeFromFavorites && this.props.removeFromFavorites(this.props.movie.id)
 	}
@@ -43,10 +43,10 @@ class MovieItem extends Component<Props> {
 	render() {
 		const { movie } = this.props
 		return (
-			<Paper2 onClick={this.onClick}>
+			<Paper2 onClick={this.onClick} className="movie-item-root">
 				{movie.image === 'N/A' ? this.noImageRenderer() : (
 					<div>
-						<img src={movie.image} height='220' alt={''} />
+						<img src={movie.image} height='220' alt={''} className="movie-item-image" />
 					</div>
 				)}
 				{!this.props.hideActionButtons &&	(
@@ -71,6 +71,7 @@ const Paper2 = styled(Paper)({
 	textAlign: 'center',
 	minHeight: '257px',
 	position: 'relative',
+	border: '1px solid transparent',
 });
 
 export default MovieItem

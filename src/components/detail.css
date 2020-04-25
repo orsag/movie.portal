@@ -1,4 +1,8 @@
 .detail-root {
+	padding-top: 105px;
+}
+
+.detail-paper {
 	color: rgba(0, 0, 0, 0.54);
 	padding: 16px;
 	text-align: center;
@@ -10,7 +14,6 @@
 	height: 500px;
 	align-items: center;
 	justify-content: space-around;
-	margin-top: 25px;
 }
 
 .detail-star {

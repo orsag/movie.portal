@@ -4,7 +4,7 @@ import {Movie} from "../types"
 import MovieItem from "./movie-item"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-import './movies-grid.css'
+import './custom-grid.css'
 import {Box} from "@material-ui/core";
 import {connect} from "react-redux";
 import {compose} from "redux";
@@ -30,7 +30,7 @@ const CustomGrid = (props: Props) => {
 	};
 
 	return (
-		<Box p={5} className="movie-grid-root">
+		<Box p={5} pt={0}>
 			{props.movies.length > 0 && (
 				<Grid container spacing={3}>
 					{props.movies.map((movie: Movie, idx: number) => (
@@ -45,16 +45,18 @@ const CustomGrid = (props: Props) => {
 					))}
 				</Grid>
 			)}
-			{!props.error && props.movies.length === 0 && (
-				<Box style={{ marginTop: !props.hideActionButtons ? '136px' : 0 }} className="movie-grid-empty">
-					<h2>No movies to show</h2>
-				</Box>
-			)}
-			{props.error && (
-				<Box style={{ marginTop: !props.hideActionButtons ? '136px' : 0 }} className="movie-grid-error">
-					<h2>Search has failed, please try again</h2>
-				</Box>
-			)}
+			<div>
+				{!props.error && props.movies.length === 0 && (
+					<Box className="custom-grid-empty">
+						<h2>No movies to show</h2>
+					</Box>
+				)}
+				{props.error && (
+					<Box className="custom-grid-error">
+						<h2>Search has failed, please try again</h2>
+					</Box>
+				)}
+			</div>
 			{displayPagination && (
 				<div className={classes.root}>
 					<Pagination count={10} variant="outlined" color="primary" page={props.page} onChange={handleChange} />

@@ -1,4 +1,4 @@
-import { MOVIES, RESET } from '../constants'
+import { MOVIES } from '../constants'
 import { filterDuplicates } from '../utils/index.js'
 
 const initialState = {
@@ -16,10 +16,6 @@ const favoritesReducer = (state = initialState, action) => {
 			return {
 				...state,
 				favorites: state.favorites.filter((movie) => movie.id !== action.id),
-			}
-		case RESET:
-			return {
-				favorites: [],
 			}
 		default:
 			return state

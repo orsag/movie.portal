@@ -14,17 +14,17 @@ const Search = (props: Props) => {
 	const classes = useStyles();
 	const [input, setInput] = useState('')
 
-	const onSubmit = (event: any) => {
+	const onSubmit = (event: React.FormEvent) => {
 		event.preventDefault()
 		props.onClick(input)
 	}
 
-	const onChange = (event: any) => {
+	const onChange = (event: React.FormEvent) => {
 		// @ts-ignore
 		setInput(event.target.value)
 	}
 
-	const onKeyPress = (event: any) => {
+	const onKeyPress = (event: React.KeyboardEvent) => {
 		props.onKeyPress(event, input)
 	}
 
@@ -36,8 +36,7 @@ const Search = (props: Props) => {
 				onInput={onChange}
 				onKeyPress={onKeyPress}
 				className={classes.input}
-				placeholder="Search Google Maps"
-				inputProps={{ 'aria-label': 'search google maps' }}
+				placeholder="Search movies"
 			/>
 			<IconButton type="submit" className={classes.iconButton} aria-label="search">
 				<SearchIcon />
