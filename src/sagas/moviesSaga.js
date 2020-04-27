@@ -21,7 +21,6 @@ export function* handleMoviesSearch({ searchText }) {
 			id: movie.imdbID,
 			type: movie.Type,
 			image: movie.Poster,
-			isFavorite: false,
 		}))
 		yield put(setMovieList(movies, searchText))
 	} catch (error) {

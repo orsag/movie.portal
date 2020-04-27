@@ -23,7 +23,7 @@ class Favorites extends Component<Props> {
 	}
 
   render = () => (
-  	<Box className="favorite-grid-root">
+  	<Box p={3} className="favorite-grid-root">
 			<CustomGrid
 				movies={this.props.favorites}
 				onClick={this.onMovieClick}

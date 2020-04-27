@@ -47,7 +47,6 @@ class Detail extends Component<Props, State> {
 				id: this.props.detail.imdbID,
 				type: this.props.detail.Type,
 				image: this.props.detail.Poster,
-				isFavorite: true,
 			})
 		}
 	}
@@ -60,7 +59,7 @@ class Detail extends Component<Props, State> {
   	const { detail } = this.props
 		if (!detail) return null
 		return (
-      <div className="detail-root">
+      <Box p={3}>
 				<div className="detail-paper">
 					<div>
 						<img src={detail.Poster} alt="" />
@@ -100,7 +99,7 @@ class Detail extends Component<Props, State> {
 						</Alert>
 					</Snackbar>
 				</div>
-      </div>
+      </Box>
     )
   }
 }

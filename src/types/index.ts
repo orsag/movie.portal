@@ -12,7 +12,6 @@ export interface Movie {
 	id: string,
 	type: string,
 	image: string,
-	isFavorite: boolean,
 }
 
 interface Rating {
